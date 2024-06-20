@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: #151515;
+        }
+
+        body,
+        a {
+            color: #fafafa;
+        }
+    </style>
+    <title>YouTube Playlist Exporter - API Instructions</title>
+</head>
+
+<body>
+    <h2>Create your Google project</h2>
+    <ol>
+        <li>Go to the <a href="https://console.cloud.google.com/apis/dashboard">Google Developers' Dashboard</a></li>
+        <li>Accept the Terms of Use of Google Cloud and click on "Continue"</li>
+        <li>Click on the "Select a project" select at the right of the Google Cloud logo</li>
+        <li>Click on the "New Project" button, and choose a name for your project</li>
+        <li>When the project is created, click again on the "Select a project" select and choose your new project</li>
+        <li>Click on the hamburger menu symbol at the top-left of the page, and click the <a
+                href="https://console.cloud.google.com/apis/dashboard">"API and Services" section</a></li>
+        <li>Now go into the <a href="https://console.cloud.google.com/apis/library">library</a>, search and enable the
+            <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com">YouTube Data API V3</a>
+        </li>
+        <li>Now go into the <a href="https://console.cloud.google.com/apis/credentials">Credential tab</a>, and create a
+            new credential by choosing "OAuth Client ID" or "API Key" (reccommended) from the dropdown menu.</li>
+        <ul style="margin: 20px 0px">
+            <li>If you've chosen the "OAuth Client ID", you need to add in the "Redirect URI" the following: <span
+                    id="composeLink"></span>, create the Token, copy the Client ID, paste it in the textbox here
+                in YouTube Playlist Exporter and check the "Use OAuth" slider.</li>
+            <li>Otherwise, copy the API key and paste it in the textbox here.</li>
+        </ul>
+        <li>Now go in the <a href="https://console.cloud.google.com/apis/credentials/consent">OAuth Consent tab</a>. Put
+            "External" as the user type. Fill the necessary fields and click on "Continue"</li>
+        <li>In the "Sensitve scope" tab (the second one), add a new scope and write "youtube.readonly". Tick the
+            checkbox at the left of the "API" column, click on "Update" and then on "Continue".</li>
+        <li>Finally, click on "Add an user", and write your e-mail address. Click on "Add" and then on "Continue". Now
+            you're ready.</li>
+    </ol>
+    <script>
+        document.getElementById("composeLink").textContent = `"${window.location.href.substring(0, window.location.href.lastIndexOf("/"))}/oauth.html"`;
+        document.getElementById("composeLink").style = "text-decoration: underline; font-style: italic";
+    </script>
+</body>

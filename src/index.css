@@ -1,0 +1,143 @@
+:root {
+  --background: #151515;
+  --text: #fafafa;
+  --struct: #313131;
+  --table: #545454;
+  --accent: #8d8251;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Work Sans', sans-serif;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.hcenter {
+  align-items: center;
+}
+
+.wcenter {
+  justify-content: center;
+}
+
+input,
+button,
+select {
+  background-color: var(--accent);
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--text);
+  font-family: 'Work Sans', sans-serif;
+  color: var(--text);
+}
+
+button,
+select {
+  width: 100%;
+  transition: filter 0.2s ease-in-out;
+}
+
+input[type=checkbox] {
+  position: relative;
+  appearance: none;
+  width: 75px;
+  height: 22px;
+  transition: 0.2s ease-in-out;
+  background-color: var(--struct);
+}
+
+input[type=checkbox]::before {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  content: "";
+  border-radius: 50%;
+  background-color: var(--text);
+  width: 16px;
+  height: 16px;
+  transition: left 0.2s ease-in-out;
+}
+
+input[type=checkbox]:checked::before {
+  left: 54px;
+}
+
+input[type=checkbox]:checked {
+  background-color: var(--accent);
+}
+
+input:hover,
+button:hover,
+.hover:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(135%);
+}
+
+button:active {
+  filter: brightness(160%);
+}
+
+.card {
+  background-color: var(--struct);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+table>tbody>tr>* {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+table>tbody>tr {
+  background-color: var(--table);
+  border-radius: 8px;
+}
+
+td:has(.selectedCheckboxWrapper) {
+  border: 5px solid var(--text);
+}
+
+.dialogContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  backdrop-filter: blur(16px) brightness(30%);
+  -webkit-backdrop-filter: blur(16px) brightness(30%);
+}
+
+.dialog {
+  position: fixed;
+  left: 15vw;
+  top: 10vh;
+  max-height: 80vh;
+  width: 75vw;
+  background-color: var(--struct);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.dialog>* {
+  padding: 10px;
+}
+
+a {
+  color: var(--text);
+}
